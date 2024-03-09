@@ -5,7 +5,7 @@ import tkinter as tk
 import time
 from typing import Optional, Callable, Literal
 
-rune_size = 50
+rune_size = 80
 rune_size2 = int(rune_size * 1.2)
 rune_offset = (rune_size2 - rune_size) // 2
 margin = 8
@@ -254,16 +254,43 @@ class BoardScreen():
 if __name__ == "__main__":
 
     board = Board()
-    def next_():
-        # print('next board')
-        board.random_board()
-        board.random_pos()
-        action_str = "LU U LD RU"
-        actions = [MoveDir.str2int(s) for s in action_str.split()]
-        bs.set_actions(actions)
-        bs.set_board(board)
-        bs.start_move()
+    board.set_board(np.array([
+
+        # 姆姆技一固版
+        [3, 3, 3, 5, 5, 3], 
+        [3, 5, 5, 4, 4, 3], 
+        [3, 4, 4, 2, 2, 3], 
+        [3, 2, 2, 1, 1, 3], 
+        [3, 1, 1, 3, 3, 3]
+
+        # 姆姆技二固版
+        # [3, 6, 6, 5, 5, 6], 
+        # [3, 5, 5, 4, 4, 3], 
+        # [3, 4, 4, 2, 2, 3], 
+        # [3, 2, 2, 1, 1, 3], 
+        # [6, 1, 1, 6, 6, 3]
+
+        # 尼祿固版
+        # [3, 3, 2, 4, 4, 1], 
+        # [3, 2, 3, 4, 1, 4], 
+        # [2, 3, 5, 1, 4, 6], 
+        # [3, 5, 3, 4, 6, 4], 
+        # [5, 3, 4, 6, 4, 3]
+    ]))
+    board.set_cur_pos(5, 4)
+    # def next_():
+    #     # print('next board')
+    #     # board.random_board()
+    #     # board.random_pos()
+    #     action_str = "LU U LD RU"
+    #     actions = [MoveDir.str2int(s) for s in action_str.split()]
+    #     bs.set_actions(actions)
+    #     bs.set_board(board)
+    #     bs.start_move()
         # board.print_board()
     bs = BoardScreen(board)
-    bs.set_next_callback(next_)
-    next_()
+    bs.set_board(board)
+    bs.set_actions([])
+    bs.start_move()
+    # bs.set_next_callback(next_)
+    # next_()
