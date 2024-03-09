@@ -4,7 +4,7 @@ import gymnasium as gym
 from stable_baselines3 import DQN
 from typing import Optional
 
-from util import *
+from utils import *
 
 KWARGS_DQN = {
     'num_col': 6, 

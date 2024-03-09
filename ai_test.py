@@ -8,7 +8,7 @@ import gymnasium as gym
 from animation import BoardScreen
 
 from train import KWARGS
-from util import *
+from utils import *
 
 
 def get_pos_by_obs(obs: np.ndarray, num_col: int, num_row: int) -> tuple[int, int]:

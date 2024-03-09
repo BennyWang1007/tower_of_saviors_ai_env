@@ -6,7 +6,7 @@ import torch.nn.functional as F
 import numpy as np
 from tqdm import tqdm
 
-from util import *
+from utils import *
 
 KWARGS_DQN = {
     'num_col': 6, 

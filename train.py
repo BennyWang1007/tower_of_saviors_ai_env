@@ -4,7 +4,7 @@ import gymnasium as gym
 from stable_baselines3 import PPO
 from typing import Optional
 
-from util import get_ppo_name, set_process_priority
+from utils import get_ppo_name, set_process_priority
 
 KWARGS = {
     'num_col': 6, 

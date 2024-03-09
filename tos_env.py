@@ -75,6 +75,7 @@ class TosBaseEnv(gym.Env, ABC):
         self.prev_reward = self.reward
         self.action = action
         self.board.move(action)
+        self.board.evaluate()
         self.obs = self.get_obs()
         terminal = self.board.is_game_over()
         

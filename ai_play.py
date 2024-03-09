@@ -10,7 +10,7 @@ from animation import BoardScreen
 from train import KWARGS
 from train_dqn import KWARGS_DQN
 import train_dqn
-from util import *
+from utils import *
 
 
 # gym.register(
